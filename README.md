@@ -1,5 +1,3 @@
-<p align="center"><img src="icons/icon-128.png" width="80" height="80" alt="租房小区选择助手 Logo"></p>
-
 # 租房小区选择助手
 
 **固定通勤终点，在高德地图上连续点选不同小区，快速比较驾车和公共交通用时，再一键跳转查看房源。**
