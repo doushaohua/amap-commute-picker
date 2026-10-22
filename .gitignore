@@ -1,0 +1,21 @@
+.DS_Store
+*.zip
+preview*.png
+artifacts/
+
+# 本地凭证、浏览器状态与个人调试材料
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+*cookie*.json
+*storage-state*.json
+*.log
+*.har
+.local/
+private/
+node_modules/

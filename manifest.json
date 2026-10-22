@@ -1,0 +1,68 @@
+{
+  "manifest_version": 3,
+  "name": "租房小区选择助手",
+  "version": "0.11.1",
+  "description": "在地图上先选终点、再选小区，比较驾车与公共交通用时并查看房源；默认下个工作日08:00。",
+  "minimum_chrome_version": "111",
+  "permissions": [
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.amap.com/*"
+  ],
+  "action": {
+    "default_title": "开启租房小区选择助手",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.amap.com/*"
+      ],
+      "js": [
+        "destination-data.js",
+        "settings-bridge.js"
+      ],
+      "run_at": "document_start",
+      "world": "ISOLATED",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://www.amap.com/*"
+      ],
+      "js": [
+        "future-data.js",
+        "departure-picker.js",
+        "future-chart.js",
+        "route-renderer.js",
+        "place-links.js",
+        "transit-data.js",
+        "transit-renderer.js",
+        "transit-view.js",
+        "panel-scrollbar.js",
+        "destination-data.js",
+        "destination-view.js",
+        "commute-picker.js"
+      ],
+      "run_at": "document_idle",
+      "world": "MAIN",
+      "all_frames": false
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
